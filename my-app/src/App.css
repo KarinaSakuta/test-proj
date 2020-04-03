@@ -56,7 +56,7 @@ body, html {
   text-decoration: none;
   border: 1px solid gray;
   padding: 55px 55px;
-  margin-bottom: 40px;
+  margin: 5px;
 }
 
 .main__button:hover {
@@ -88,6 +88,8 @@ body, html {
 
 .menu__title {
   text-align: center;
+  font-size: 24px;
+  letter-spacing: 3px;
 }
 
 .content__container {

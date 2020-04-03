@@ -12,7 +12,10 @@ export class Main extends Component {
 
     render() {
         const elementsCount = PAGE_NAMES.length;
-        const maxWidth = String(elementsCount * 110) + 'px'; 
+        let maxWidth = String(elementsCount * 110) + 'px';
+        if (elementsCount >= 9) {
+            maxWidth = String(elementsCount * 89) + 'px';
+        }
         console.log(elementsCount);
         return (
             <div className="main">

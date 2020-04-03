@@ -1,30 +1,32 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import classnames from 'classnames';
+import {PAGE_NAMES} from '../constants';
+import {withRouter} from 'react-router-dom';
 
-export class Menu extends Component {
-    constructor(props) {
-        super(props);
+class Menu extends Component {
+    renderLinks() {
+        return PAGE_NAMES.map((name, i) => {
+            const link = `/page/${name}`;
+            const isCurrentPage = (link === this.props.location.pathname);
+            const linkClasses = classnames('menu__link', {
+                'menu__link_active': isCurrentPage,
+            });
 
-        this.state = {
-            names: ['page1', 'page2', 'page3', 'page4'],
-        };
-    }
-
-    componentDidMount() {
-
+            return (<Link to={link} className={linkClasses} key={i}>{name}</Link>);
+        });
     }
 
     render() {
-        const menuClasses = classnames('menu__link', {
-            'menu__link menu__link_active': this.state.isBlurNone,
-        });
-        const names = this.state.names;
         return (
             <div className="menu__container">
-                    <h3 className="menu__title">Меню</h3>
-                    {names.map((component, i) => <Link to={component} className={menuClasses} key={i}>{component}</Link>)}
+                <h3 className="menu__title">Меню</h3>
+                {this.renderLinks()}
             </div>
         );
     }
 }
+
+const MenuWithRouter = withRouter(Menu);
+
+export { MenuWithRouter as Menu };

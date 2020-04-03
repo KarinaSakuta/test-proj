@@ -4,7 +4,7 @@ body, html {
 * {
   box-sizing: border-box;
 }
-#root, .container, .main__container {
+#root, .container, .main, .main__container {
   height: 100%;
 }
 .header__container {
@@ -46,7 +46,6 @@ body, html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 430px;
   justify-content: space-around;
 }
 
@@ -83,7 +82,7 @@ body, html {
   margin-left: 45px;
 }
 
-.menu__link:hover {
+.menu__link:hover, .menu__link_active {
   color: rgb(138, 37, 97);
 }
 
@@ -93,7 +92,7 @@ body, html {
 
 .content__container {
   flex-direction: column;
-  padding-left: 180px;
+  padding-left: 160px;
   padding-top: 200px;
   margin: 0 auto;
   display: flex;
@@ -104,12 +103,17 @@ body, html {
   text-align: center;
   font-family: 'Baloo Thambi 2', cursive;
   font-size: 40px;
-  color: rgb(55, 55, 55);
+  color: rgb(65, 60, 56);
   text-decoration: none;
-  border-bottom: 1px solid;
+  border-bottom: 2px solid gray;
+  border-top: 2px solid gray;
+  background-color: #d189b5;
+
 }
 
 .content__text {
+  text-align: center;
+  padding: 0px 15px;
   font-family: 'Quicksand', sans-serif;
   font-size: 19px;
 }
